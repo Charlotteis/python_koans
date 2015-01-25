@@ -18,6 +18,15 @@
 #
 def triangle(a, b, c):
     # DELETE 'PASS' AND WRITE THIS CODE
+    list = [a, b, c]
+    for item in list:
+        if item <= 0:
+            raise TriangleError
+
+    sorted_list = sorted(list)
+    if (sorted_list[0] + sorted_list[1]) < sorted_list[2]:
+        raise TriangleError
+
     if a == b == c:
         return "equilateral"
     elif (a == b) or (a == c) or (b == c):
